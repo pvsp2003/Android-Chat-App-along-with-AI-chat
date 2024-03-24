@@ -1,3 +1,3 @@
---One to one communication chat 
---Login and Register and message storage using Firebase
---AI chat using Gemini API
+One to one communication chat<br> 
+Login and Register and message storage using Firebase<br>
+AI chat using Gemini API<br>

@@ -43,6 +43,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity{
         DatabaseReference chatsReference = database.getReference().child("chats");
         long oneHourAgo = System.currentTimeMillis() - (60 * 60 * 1000); // One hour ago in milliseconds
 
-        usersReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        usersReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 HashMap<String, String> userIdToNameMap = new HashMap<>();
@@ -187,7 +188,8 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(getApplicationContext(), NotificationActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("data", messageContent);
-        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_MUTABLE);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
+
         builder.setContentIntent(pendingIntent);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -200,11 +202,13 @@ public class MainActivity extends AppCompatActivity{
                 notificationChannel.enableVibration(true);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
-            notificationManager.notify(0, builder.build());
+            int notificationId = (int) System.currentTimeMillis(); // Unique ID for each notification
+            notificationManager.notify(notificationId, builder.build());
+
         }
     }
     private void checkForRecentMessages(DatabaseReference chatsReference, HashMap<String, String> userIdToNameMap, long oneHourAgo) {
-        chatsReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        chatsReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 HashSet<String> recentSenders = new HashSet<>();
@@ -213,7 +217,7 @@ public class MainActivity extends AppCompatActivity{
                     DataSnapshot messagesSnapshot = chatSnapshot.child("messages");
                     for (DataSnapshot messageSnapshot : messagesSnapshot.getChildren()) {
                         msgModelclass message = messageSnapshot.getValue(msgModelclass.class);
-                        if (message != null && message.getTimeStamp() >= oneHourAgo) {
+                        if (message != null && message.getTimeStamp() >= oneHourAgo && !Objects.equals(message.getSenderid(), Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())) {
                             String senderName = userIdToNameMap.getOrDefault(message.getSenderid(), "Unknown User");
                             recentSenders.add(senderName);
                         }

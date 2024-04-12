@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/textviewdata"
-        android:layout_width="232dp"
-        android:layout_height="131dp"
+        android:layout_width="411dp"
+        android:layout_height="347dp"
         android:gravity="center"
         android:text="some data
 "></TextView>

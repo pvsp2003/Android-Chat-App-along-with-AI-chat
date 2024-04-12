@@ -15,31 +15,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649"
+        app:layout_constraintVertical_bias="0.348"
         app:srcCompat="@drawable/photocamera" />
 
     <EditText
         android:id="@+id/settingname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="278dp"
+        android:layout_height="66dp"
         android:layout_marginTop="216dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="#43A047"
+        android:textColorHint="#8E24AA"
         app:layout_constraintBottom_toTopOf="@+id/settingstatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <EditText
         android:id="@+id/settingstatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="name"
+        android:textColor="#7CB342"
+        android:textColorHint="#8E24AA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -49,9 +53,9 @@
 
     <Button
         android:id="@+id/donebutt"
+        android:layout_width="201dp"
+        android:layout_height="73dp"
         android:backgroundTint="@color/black"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_35sdp"
         android:text="Save"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,5 +64,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.798" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="277dp"
+        android:layout_height="39dp"
+        android:gravity="center"
+        android:text="Profile Name"
+        android:textColor="#5E35B1"
+        app:layout_constraintBottom_toTopOf="@+id/settingname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingprofile"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="294dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="Profile Status"
+        android:textColor="#5E35B1"
+        app:layout_constraintBottom_toTopOf="@+id/settingstatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingname"
+        app:layout_constraintVertical_bias="0.48" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

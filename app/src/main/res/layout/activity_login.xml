@@ -60,6 +60,7 @@
         android:layout_marginBottom="108dp"
         android:gravity="center"
         android:text="@string/email"
+        android:textColor="#311B92"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,6 +77,7 @@
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Password"
+        android:textColor="#311B92"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,8 +92,10 @@
         android:layout_width="353dp"
         android:layout_height="65dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="text"
         android:textColor="@color/black"
+        android:textColorHint="#5E35B1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.595"
@@ -105,14 +109,15 @@
         android:layout_height="66dp"
         android:layout_marginBottom="116dp"
         android:ems="10"
-        android:textColor="@color/black"
+        android:hint="Password"
         android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="#5E35B1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <Button
         android:id="@+id/logbutton"
@@ -163,12 +168,15 @@
         android:id="@+id/button"
         android:layout_width="222dp"
         android:layout_height="55dp"
+        android:layout_marginTop="8dp"
         android:shadowColor="#F57F17"
         android:text="Chat with AI"
         android:textColor="#4A148C"
-        app:rippleColor="#0D47A1"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="212dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#0D47A1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

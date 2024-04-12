@@ -29,7 +29,7 @@
         android:layout_toLeftOf="@id/profilerggg"
         android:background="@drawable/sender_shape"
         android:padding="@dimen/_7sdp"
-        android:text="aysuhvish"
+        android:text="zaid"
         android:textColor="@color/black"
         android:textStyle="bold" />
 

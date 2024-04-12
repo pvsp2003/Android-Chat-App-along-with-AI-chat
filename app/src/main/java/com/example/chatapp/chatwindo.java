@@ -43,6 +43,7 @@ public class chatwindo extends AppCompatActivity {
     RecyclerView messageAdpter;
     ArrayList<msgModelclass> messagesArrayList;
     messagesAdpter mmessagesAdpter;
+    long receivedTimestamp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class chatwindo extends AppCompatActivity {
         reciverName = getIntent().getStringExtra("nameeee");
         reciverimg = getIntent().getStringExtra("reciverImg");
         reciverUid = getIntent().getStringExtra("uid");
+        //receivedTimestamp = getIntent().getLongExtra("timestampKey", -1); // Default value as -1
 
         messagesArrayList = new ArrayList<>();
 

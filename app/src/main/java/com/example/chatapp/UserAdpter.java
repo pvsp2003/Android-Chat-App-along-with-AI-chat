@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import java.time.LocalDateTime;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -47,6 +49,12 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
                 intent.putExtra("nameeee",users.getUserName());
                 intent.putExtra("reciverImg",users.getProfilepic());
                 intent.putExtra("uid",users.getUserId());
+                //Date date = new Date();
+                //long timestamp = date.getTime();
+                //intent.putExtra("timestampKey", timestamp);
+
+
+
                 mainActivity.startActivity(intent);
 
             }

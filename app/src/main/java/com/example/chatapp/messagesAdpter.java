@@ -63,7 +63,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
+                                //scope to add delete of the message
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override

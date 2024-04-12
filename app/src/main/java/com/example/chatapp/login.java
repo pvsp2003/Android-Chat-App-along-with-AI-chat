@@ -43,6 +43,7 @@ public class login extends AppCompatActivity {
         password=findViewById(R.id.editTextPasslog);
         signuptext=findViewById(R.id.signuplog);
         geminibutton=findViewById(R.id.button);
+
         button.setOnClickListener(new View.OnClickListener()
         {@Override
         public void onClick(View v)
@@ -94,11 +95,12 @@ public class login extends AppCompatActivity {
         geminibutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login.this, geminichat.class);
+                Intent intent = new Intent(login.this, Geminiconversationpage.class);
                 startActivity(intent);
                 finish();
             }
         });
+
 
 
 

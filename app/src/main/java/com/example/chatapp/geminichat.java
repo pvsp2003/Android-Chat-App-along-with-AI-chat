@@ -39,7 +39,7 @@ public class geminichat extends AppCompatActivity {
         // For text-only input, use the gemini-pro model
         GenerativeModel gm = new GenerativeModel(/* modelName */ "gemini-pro",
 // Access your API key as a Build Configuration variable (see "Set up your API key" above)
-                /* apiKey */ "");
+                /* apiKey */ "AIzaSyAgnJrSQ_X97FyEg40c6S9ccHkrzL9fLZo");
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
         Content content = new Content.Builder()
                 .addText(userPrompt)
